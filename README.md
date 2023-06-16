@@ -1,5 +1,5 @@
 # Ray-Tracer
-This is a Physical Based Renderer that references several texts.
+I will develop a Physically Based Renderer here.
 
 # Reference
 * yumcyawiz, Photorealism (https://booth.pm/ja/items/1159865) 
