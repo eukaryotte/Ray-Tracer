@@ -25,6 +25,16 @@ class Vec3 {
         return std::sqrt(x*x + y*y + z*z);
     };
 
+    double FastInverseSquareRoot(double x) const {
+    double xhalf = 0.5 * x;
+    long long i = *(long long*)&x;
+    i = 0x5fe6ec85e7de30daLL - (i >> 1);
+    x = *(double*)&i;
+    x = x * (1.5 - xhalf * x * x);
+    return x;
+    };
+
+
     // ベクトルの長さの二乗
     double length2() const {
         return x*x + y*y + z*z;
@@ -94,7 +104,7 @@ Vec3 cross(const Vec3& v1, const Vec3& v2) {
 
 // 正規化
 Vec3 normalize(const Vec3& v) {
-    return v/v.length();
+    return v/v.FastInverseSquareRoot(v.x * v.x + v.y * v.y + v.z * v.z);
 }
 
 // コンソール出力
