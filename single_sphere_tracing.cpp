@@ -5,6 +5,7 @@
 #include "sphere.h"
 #include "image.h"
 
+
 int main() {
     // 512x512 の画像
     Image img(512, 512);
@@ -19,7 +20,6 @@ int main() {
     for (int i = 0; i < img.width; i++) {
         for (int j = 0; j < img.height; j++) {
             // (u, v)を計算
-
             double u = (2.0*i - img.width)/img.width;
             double v = (2.0*j - img.height)/img.height;
 

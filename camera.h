@@ -34,11 +34,11 @@ class PinholeCamera : public Camera {
 
     Ray getRay(double u, double v) const {
         // ピンホールの位置
-        Vec3 pinholePos = camPos + pinholeDist * camForward;
+        Vec3 pinholePos = camPos + pinholeDist*camForward;
         // (u, v)に対応するセンサー上の位置
         Vec3 sensorPos = camPos + u*camRight + v*camUp;
 
-        return Ray(sensorPos, normalize(pinholePos - sensorPos));
+       return Ray(sensorPos, normalize(pinholePos - sensorPos));        
     };
 };
 

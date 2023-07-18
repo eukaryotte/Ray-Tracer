@@ -31,6 +31,11 @@ class Image {
         data[i + width*j] = c;
     };
 
+    //ピクセル(i, j)に色を追加する
+    void addPixel(int i, int j, const Vec3& c) {
+        data[i + width*j] = data[i + width*j] + c;
+    };
+
     // 全てのピクセルを一定の値で割る
     void divide(double k) {
         for (int i = 0; i < width; i++) {

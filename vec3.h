@@ -104,7 +104,7 @@ Vec3 cross(const Vec3& v1, const Vec3& v2) {
 
 // 正規化
 Vec3 normalize(const Vec3& v) {
-    return v/v.FastInverseSquareRoot(v.x * v.x + v.y * v.y + v.z * v.z);
+    return v/v.length();
 }
 
 // コンソール出力
