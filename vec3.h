@@ -154,4 +154,17 @@ void orthonormalBasis(const Vec3& v1, Vec3& v2, Vec3& v3) {
     v3 = cross(v1, v2);
 }
 
+//ワールド座標系からローカル座標系に変換する
+Vec3 worldToLocal(const Vec3& v, const Vec3& s, const Vec3& n, const Vec3& t) {
+    return Vec3(dot(v, s), dot(v, n), dot(v, t));
+}
+
+//ローカル座標系からワールド座標系に変換する
+Vec3 localToWorld(const Vec3& v, const Vec3& s, const Vec3& n, const Vec3& t) {
+    Vec3 a = Vec3(s.x, n.x, t.x);
+    Vec3 b = Vec3(s.y, n.y, t.y);
+    Vec3 c = Vec3(s.z, n.z, t.z);
+    return Vec3(dot(v, a), dot(v, b), dot(v, c));
+}
+
 #endif

@@ -4,14 +4,17 @@
 #include "vec3.h"
 #include "ray.h"
 #include "hit.h"
+#include "material.h"
+#include "light.h"
 
 
 class Sphere {
     public:
     Vec3 center; // 中心位置
     double radius; // 半径
-    Sphere(const Vec3& _center, double _radius) : center(_center),
-    radius(_radius) {};
+    std::shared_ptr<Material> material; //BRDF
+    std::shared_ptr<Light> light; //Le
+    Sphere(const Vec3& _center, double _radius, const std::shared_ptr<Material>& _material, const std::shared_ptr<Light>& _light) : center(_center), radius(_radius), material(_material), light(_light) {};
 
     // rayと交差しているか判定する、交差している場合は衝突判定をresに格納する。
 
