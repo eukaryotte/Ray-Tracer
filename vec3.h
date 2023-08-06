@@ -39,6 +39,38 @@ class Vec3 {
     double length2() const {
         return x*x + y*y + z*z;
     };
+
+    Vec3 operator-() const {
+    return Vec3(-x, -y, -z);
+    };
+
+    Vec3& operator+=(const Vec3& v) {
+    x += v.x;
+    y += v.y;
+    z += v.z;
+    return *this;
+    };
+
+    Vec3& operator-=(const Vec3& v) {
+    x -= v.x;
+    y -= v.y;
+    z -= v.z;
+    return *this;
+    };
+
+    Vec3& operator*=(const Vec3& v) {
+    x *= v.x;
+    y *= v.y;
+    z *= v.z;
+    return *this;
+    };
+
+    Vec3& operator/=(const Vec3& v) {
+    x /= v.x;
+    y /= v.y;
+    z /= v.z;
+    return *this;
+    };
 };
 
 // ベクトル同士の演算をオーバーロードで定義する
