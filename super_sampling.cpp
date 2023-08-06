@@ -25,6 +25,8 @@ int main() {
 
     Aggregate aggregate;
     aggregate.add(std::make_shared<Sphere>(Vec3(0, 0, -3), 1));
+    aggregate.add(std::make_shared<Sphere>(Vec3(3, 0, -5), 1));
+    aggregate.add(std::make_shared<Sphere>(Vec3(-5, 0, -7), 1));
     aggregate.add(std::make_shared<Sphere>(Vec3(0, -10001, 0), 10000));
 
     Vec3 sunDir = normalize(Vec3(1, 1, 1));
